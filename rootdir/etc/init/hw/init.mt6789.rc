@@ -5,6 +5,9 @@ import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.mt6789.power.rc
 import /vendor/etc/init/hw/init.modem.rc
 
+on early-init
+    write /sys/module/drm/parameters/vblankoffdelay -1
+
 on init
 # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608

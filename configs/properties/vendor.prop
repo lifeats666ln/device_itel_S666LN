@@ -158,6 +158,7 @@ ro.vendor.transsion.backlight_12bit=1
 
 # LMKD
 ro.lmk.downgrade_pressure=30
+ro.lmk.filecache_min_kb=153600
 ro.lmk.kill_heaviest_task=true
 ro.lmk.thrashing_limit_decay=50
 ro.lmk.use_minfree_levels=false

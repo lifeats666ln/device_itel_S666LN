@@ -46,3 +46,6 @@ type proc_game_state, fs_type, proc_type, sysfs_type;
 # VMAX
 type aw87xxx_vmax, fs_type, sysfs_type;
 dontaudit kernel system_data_file:file read;
+
+# proc_compaction_proactiveness type
+type proc_compaction_proactiveness, fs_type, proc_type;

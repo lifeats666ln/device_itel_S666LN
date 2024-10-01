@@ -2,8 +2,8 @@
 ro.vendor.mtk_aal_support=1
 
 # Audio
-aaudio.mmap_exclusive_policy=2
-aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=0
+aaudio.mmap_policy=0
 persist.vendor.audiohal.aurisys.pcm_dump_on=0
 persist.vendor.audiohal.p2w_dump_on=0
 persist.vendor.audiohal.pcm_mixer_dump_on=0

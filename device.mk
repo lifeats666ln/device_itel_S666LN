@@ -507,8 +507,10 @@ PRODUCT_FS_COMPRESSION := 1
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Vibrator
+VIBRATOR_SUPPORTS_EFFECTS := true
+
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.millennium
+    android.hardware.vibrator-service.mediatek.s666ln
 
 # VNDK
 PRODUCT_PACKAGES += \

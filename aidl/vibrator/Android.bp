@@ -25,10 +25,10 @@ mediatek_vibrator_defaults {
 }
 
 cc_binary {
-    name: "android.hardware.vibrator-service.mediatek",
+    name: "android.hardware.vibrator-service.mediatek.s666ln",
     defaults: ["mediatek_vibrator_defaults"],
-    vintf_fragments: ["android.hardware.vibrator.mediatek.xml"],
-    init_rc: ["vibrator-mediatek.rc"],
+    vintf_fragments: ["android.hardware.vibrator.mediatek.s666ln.xml"],
+    init_rc: ["vibrator-mediatek-s666ln.rc"],
     vendor: true,
     relative_install_path: "hw",
 

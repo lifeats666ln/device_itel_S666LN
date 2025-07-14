@@ -181,7 +181,7 @@ PRODUCT_PACKAGES += \
 
 # FastbootD
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock
+    android.hardware.fastboot-service.example_recovery
 
 # Bypass Lock State for Fenrir
 $(call soong_config_set_bool,fastbootd,bypass_lock_state,true)

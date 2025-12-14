@@ -329,6 +329,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     FrameworksResTarget \
+    Launcher3ResTarget \
     SettingsResTarget \
     SettingsProviderResTarget \
     SystemUIResTarget

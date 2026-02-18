@@ -141,6 +141,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libformatter.so', 'libformatter-v33.so'),
     'vendor/lib64/libmnl-v33.so': blob_fixup()
         .add_needed('libcutils.so'),
+    'vendor/etc/init/init.volte_md_status.rc': blob_fixup()
+        .binary_regex_replace(b'system/vendor', b'vendor'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

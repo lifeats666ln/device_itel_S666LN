@@ -135,6 +135,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libjni_shim.so'),
     'vendor/etc/init/em_hidl_user.rc': blob_fixup()
         .regex_replace(r'[ \t]*interface vendor\.mediatek\.hardware\.engineermode.*\n', ''),
+    'vendor/etc/init/init.volte_md_status.rc': blob_fixup()
+        .binary_regex_replace(b'system/vendor', b'vendor'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -192,7 +192,6 @@ vendor.mtk.vdec.waitkeyframeforplay=9
 # Misc
 persist.vendor.factory.GB2312=no
 persist.vendor.kernel.version=5
-persist.vendor.uxcompaction_enable=true
 ro.logd.kernel=false
 ro.vendor.efuse_writer_enable=1
 ro.vendor.mml.mtk_mml_support=0

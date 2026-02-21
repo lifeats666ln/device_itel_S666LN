@@ -166,7 +166,6 @@ ro.vendor.mediatek.version.release=alps-mp-s0.mp1.rc-V15.102_reallytek.s0mp1rc.k
 
 # Misc
 persist.vendor.kernel.version=5
-persist.vendor.uxcompaction_enable=true
 ro.vendor.rc=/vendor/etc/init/hw/
 
 # Netflix

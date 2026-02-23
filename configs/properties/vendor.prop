@@ -102,7 +102,6 @@ persist.sys.fuse.passthrough.enable=true
 ro.hardware.gatekeeper=trustonic
 
 # Graphics
-debug.cpurend.vsync=false
 debug.graphics.game_default_frame_rate.disabled=true
 debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false

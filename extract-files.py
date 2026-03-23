@@ -136,6 +136,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/em_hidl_user.rc': blob_fixup()
         .regex_replace(r'[ \t]*interface vendor\.mediatek\.hardware\.engineermode.*\n', ''),
     'vendor/bin/mnld': blob_fixup()
+        .binary_regex_replace(b'ro.logsystem.usertype', b'ro.vendor.lgsys.utype')
         .replace_needed('libmnl.so', 'libmnl-v33.so'),
     ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
         .replace_needed('libformatter.so', 'libformatter-v33.so'),

@@ -34,3 +34,6 @@ vendor.tee.googlekey.status                          u:object_r:vendor_mtk_trust
 
 # Vibrator
 ro.vendor.tran.vibrator.option u:object_r:vendor_mtk_default_prop:s0
+
+# MNLD
+ro.vendor.lgsys.utype    u:object_r:vendor_mtk_mnld_prop:s0

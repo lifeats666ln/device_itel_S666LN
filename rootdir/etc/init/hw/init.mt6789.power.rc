@@ -121,3 +121,6 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/swappiness 125
     write /proc/sys/vm/watermark_scale_factor 125
     write /proc/sys/vm/dirty_writeback_centisecs 1500
+
+    # disable proactive compaction
+    write /proc/sys/vm/compaction_proactiveness 0

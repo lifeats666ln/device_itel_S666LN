@@ -134,6 +134,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libjni_shim.so'),
     'vendor/etc/init/em_hidl_user.rc': blob_fixup()
         .regex_replace(r'[ \t]*interface vendor\.mediatek\.hardware\.engineermode.*\n', ''),
+    'vendor/bin/mnld': blob_fixup()
+        .replace_needed('libmnl.so', 'libmnl-v33.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

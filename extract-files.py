@@ -138,6 +138,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libmnl.so', 'libmnl-v33.so'),
     ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
         .replace_needed('libformatter.so', 'libformatter-v33.so'),
+    'vendor/lib64/libmnl-v33.so': blob_fixup()
+        .add_needed('libcutils.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

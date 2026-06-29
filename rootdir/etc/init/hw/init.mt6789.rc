@@ -245,9 +245,6 @@ on boot
 on property:sys.boot_completed=1
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
-    
-    # Restart media HAL
-    restart android-hardware-media-c2-hal-1-2
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset

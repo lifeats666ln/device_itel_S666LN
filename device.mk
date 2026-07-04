@@ -472,7 +472,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libaedv \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/google/interfaces \
-    hardware/google/pixel \
+    hardware/google/pixel/pixelstats \
+    hardware/google/pixel/power-libperfmgr \
     hardware/millennium \
     hardware/millennium/libtranlog
 

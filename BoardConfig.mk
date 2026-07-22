@@ -33,6 +33,7 @@ BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += sysctl.kernel.sched_pelt_multiplier=4
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
+BOARD_KERNEL_CMDLINE += log_buf_len=1024K
 
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x3fff8000

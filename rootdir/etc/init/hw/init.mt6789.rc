@@ -386,6 +386,10 @@ on post-fs-data
     #Fingerprint
     chmod 0666 /dev/goodix_fp
     chmod 0666 /dev/silead_fp
+    mkdir /data/gf_data 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+    restorecon_recursive /data/gf_data
+    restorecon_recursive /data/vendor/goodix
 
     #v4l2 codec
     chmod 0660 /dev/vcu

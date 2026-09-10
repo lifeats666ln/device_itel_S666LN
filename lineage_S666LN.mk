@@ -25,8 +25,17 @@ PRODUCT_MODEL := itel S666LN
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
+# Build Fingerprint
+BUILD_FINGERPRINT := Itel/S666LN-OP/itel-S666LN:13/TP1A.220624.014/251212V1661:user/release-keys
+TARGET_BUILD_FINGERPRINT := $(BUILD_FINGERPRINT)
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT=$(BUILD_FINGERPRINT) \
+    PRIVATE_BUILD_DESC="sys_tssi_64_armv82_itel-user 13 TP1A.220624.014 974711 release-keys" \
+    PRODUCT_NAME=S666LN-OP \
+    TARGET_DEVICE=itel-S666LN \
     BuildDesc="sys_tssi_64_armv82_itel-user 13 TP1A.220624.014 974711 release-keys" \
-    BuildFingerprint=Itel/S666LN-OP/itel-S666LN:13/TP1A.220624.014/251212V1661:user/release-keys \
+    BuildFingerprint=$(BUILD_FINGERPRINT) \
     DeviceProduct=S666LN-OP \
     DeviceName=itel-S666LN
+

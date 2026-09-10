@@ -18,7 +18,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so;MODULE_SUFFIX=_vendor
 
 # Audio
 vendor/lib/libbwc.so
-vendor/lib/libladder.so
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6789.so
 vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so;FIX_SONAME
 vendor/lib64/libMtkSpeechEnh.so
@@ -39,7 +38,6 @@ vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libbwc.so
 vendor/lib64/libcvsd_mtk.so
-vendor/lib64/libladder.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so

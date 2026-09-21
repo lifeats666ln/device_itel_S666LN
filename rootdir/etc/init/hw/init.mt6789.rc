@@ -55,6 +55,12 @@ on late-init
 # mount different fs start
 
 on property:init.svc.vendor.charger=running
+    trigger sys-charger-running
+
+on property:init.svc.kpoc_charger=running
+    trigger sys-charger-running
+
+on sys-charger-running
     # Turn backlight on and switch to backlight trigger
     write /sys/class/leds/lcd-backlight/brightness "1000"
     write /sys/class/leds/lcd-backlight/trigger "backlight"

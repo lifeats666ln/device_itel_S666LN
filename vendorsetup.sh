@@ -1,5 +1,5 @@
 # Clone Device Kernel Tree
-git clone -b thirteen https://github.com/kimelazx/device_itel_S666LN-kernel device/itel/S666LN-kernel
+git clone https://github.com/dns24/kernel_itel_s666ln device/itel/S666LN-kernel
 
 # Clone Device Vendor Tree
 git clone -b lineage-20.0 https://github.com/kimelazx/vendor_itel_S666LN vendor/itel/S666LN

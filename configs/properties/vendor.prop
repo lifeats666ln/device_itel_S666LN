@@ -181,7 +181,6 @@ debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
 media.c2.hal.selection=aidl
 media.stagefright.thumbnail.prefer_hw_codecs=true
-ro.vendor.iomanager.support=1
 ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.mtk.c2.vdec.fmt.support.level=1
 ro.vendor.mtk_sec_video_path_support=1

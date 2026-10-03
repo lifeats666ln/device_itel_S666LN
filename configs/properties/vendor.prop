@@ -187,11 +187,6 @@ vendor.boostfwk.fling_distance_dp=20
 vendor.boostfwk.launcher_use_interaction=1
 vendor.perf.framepacing.enable=1
 
-# Pnpmgr
-persist.vendor.pnpmgr.enable=1
-persist.vendor.pnpmgr.gamemode.enable=1
-persist.vendor.pnpmgr.gamerecord.enable=1
-
 # Power
 ro.vendor.powerdata.support=1
 ro.vendor.powerhal.cloud=1

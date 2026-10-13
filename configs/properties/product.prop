@@ -3,3 +3,7 @@ persist.sys.activity_anim_perf_override=true
 
 # F2FS
 persist.fsck.disable_linear_lookup=on
+
+# zRAM
+mmd.zram.enabled=true
+mmd.zram.writeback.use_nr_tags_prop=true

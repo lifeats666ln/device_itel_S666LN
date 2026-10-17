@@ -50,12 +50,6 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.vendor.mtk_omacp_support=1
 ro.vendor.mtk_telephony_add_on_policy=0
 
-# Radio
-persist.sys.radio.force_lte_ca=true
-ro.vendor.mtk_telephony_add_on_policy=0
-vendor.rild.libargs=-d /dev/ttyC0
-vendor.rild.libpath=mtk-ril.so
-
 # Wifi
 mediatek.wlan.ctia=0
 persist.vendor.wfc.sys_wfc_support=1

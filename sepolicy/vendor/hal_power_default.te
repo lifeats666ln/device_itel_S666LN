@@ -30,4 +30,11 @@ allow hal_power_default proc_game_state:file { ioctl read write getattr lock app
 allow hal_power_default proc_game_state:lnk_file { ioctl read write getattr lock append map open watch watch_reads };
 
 hal_client_domain(hal_power_default, hal_thermal)
+
+# Allow ADPF hint sessions to set uclamp on session threads
+allow hal_power_default self:capability sys_nice;
+allow hal_power_default appdomain:process { getsched setsched };
+allow hal_power_default surfaceflinger:process setsched;
+allow hal_power_default system_server:process setsched;
+allow hal_power_default hal_graphics_composer_default:process setsched;
 dontaudit hal_power_default self:capability dac_override;

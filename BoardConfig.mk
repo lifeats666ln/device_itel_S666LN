@@ -91,9 +91,6 @@ $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/devices/platform/charger/tran_aichg_disable_charger)
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,true)
 
-# Graphics
-TARGET_USES_VULKAN := true
-
 
 # Kernel
 TARGET_NO_KERNEL_OVERRIDE := true

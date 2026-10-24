@@ -415,18 +415,6 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "CPUEfficiencyClusterMaxFreq",
-      "Duration": 1500,
-      "Value": "1600000"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "CPUSuperClusterMaxFreq",
-      "Duration": 1500,
-      "Value": "2200000"
-    },
-    {
-      "PowerHint": "INTERACTION",
       "Node": "FGUclampMin",
       "Duration": 3000,
       "Value": "10"

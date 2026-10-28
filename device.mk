@@ -192,7 +192,8 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    FMTuner
+    FMTuner \
+    libmtkfmjni
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

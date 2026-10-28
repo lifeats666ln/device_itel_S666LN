@@ -190,6 +190,10 @@ $(call soong_config_set_bool,fastbootd,bypass_lock_state,true)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor:64
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    FMTuner
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \

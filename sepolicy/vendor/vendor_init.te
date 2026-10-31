@@ -21,5 +21,4 @@ get_prop(vendor_init, vts_status_prop)
 rw_dir_file(vendor_init, sysfs_leds)
 allow vendor_init mtk_radio_device:lnk_file unlink;
 dontaudit vendor_init bluetooth_prop:property_service set;
-dontaudit vendor_init default_prop:property_service set;
 rw_dir_file(vendor_init, sysfs_ged)

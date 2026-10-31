@@ -100,7 +100,6 @@ debug.hwui.skia_use_perfetto_track_events=false
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
 debug.renderengine.backend=skiaglthreaded
-debug.sf.disable_client_composition_cache=1
 graphics.gpu.profiler.support=true
 persist.vendor.sys.mtkaal.function=0
 ro.hardware.egl=mali
@@ -146,7 +145,6 @@ ro.incremental.enable=yes
 debug.hwui.target_cpu_time_percent=60
 debug.hwui.use_hint_manager=true
 debug.sf.enable_adpf_cpu_hint=true
-ro.hwui.render_ahead=5
 
 # HWComposer
 ro.vendor.composer_version=2.3

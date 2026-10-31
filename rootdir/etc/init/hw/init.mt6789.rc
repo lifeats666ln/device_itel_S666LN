@@ -271,10 +271,6 @@ on property:sys.boot_completed=1
     # Restart media HAL
     restart android-hardware-media-c2-hal-1-2
 
-    # Report max frequency to unity and miHoYo (HoYoverse) games tasks
-    write /proc/sys/kernel/sched_lib_name "com.miHoYo.,com.HoYoverse.,UnityMain,libunity.so"
-    write /proc/sys/kernel/sched_lib_mask_force 255
-
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal

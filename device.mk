@@ -339,6 +339,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     ApertureOverlay \
+    LineageSDKResTarget \
     NcmTetheringOverlay \
     AudioFX
 

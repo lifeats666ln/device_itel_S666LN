@@ -102,6 +102,7 @@ debug.mediatek.disp_decompress=1
 debug.renderengine.backend=skiaglthreaded
 graphics.gpu.profiler.support=true
 persist.vendor.sys.mtkaal.function=0
+persist.vendor.sys.pq.disp.aal.bypass=1
 ro.hardware.egl=mali
 ro.hardware.gralloc=common
 ro.hardware.hwcomposer=mtk_common

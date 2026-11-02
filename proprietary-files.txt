@@ -1226,12 +1226,15 @@ vendor/lib64/libvpu.so
 
 # Media (C2)
 vendor/etc/mtk_platform_codecs_config.xml
-vendor/lib64/libformatter.so:vendor/lib64/libformatter-v33.so;FIX_SONAME
-vendor/lib64/libcodec2_mtk_c2store.so
-vendor/lib64/libcodec2_mtk_vdec.so
-vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_vpp_qt_plugin.so
-vendor/lib64/libcodec2_vpp_rs_plugin.so
+
+# Media (C2) from kansas-user-16-W1VKS36M.9-12-9-8-3-6b8cf8-release-keys
+vendor/lib64/libcodec2_mtk_c2store.so|4661778d325f23bdecfc90eb12df2d491ba09759
+vendor/lib64/libcodec2_mtk_vdec.so|ae36c0f0437dd8d80f9b2caf24e94cac1722b257
+vendor/lib64/libcodec2_mtk_venc.so|d41a59409ae550f1a9c37efa67ca7a21eff433de
+vendor/lib64/libcodec2_vpp_mi_plugin.so|74321eedd38154687400d2cd38c8e40b6870d60a
+vendor/lib64/libcodec2_vpp_qt_plugin.so|426dd8ead467f6616cecc1e9b989e489a9e9b242
+vendor/lib64/libcodec2_vpp_rs_plugin.so|01d219220607eaf50fbb10c4ffac7117e560411a
+vendor/lib64/libformatter.so:vendor/lib64/libformatter_mtk.so;FIX_SONAME|42d345ad56c2311d208932cf1292edc2166a3c81
 
 # Media (Common)
 vendor/lib/AVCSecureVdecCA_510.so;DISABLE_CHECKELF

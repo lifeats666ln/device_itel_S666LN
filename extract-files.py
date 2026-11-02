@@ -61,14 +61,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .binary_regex_replace(b'A2dpsuspendonly', b'A2dpSuspended\x00\x00')
         .binary_regex_replace(b'BTAudiosuspend', b'A2dpSuspended\x00'),
-    (
-        'vendor/lib64/hw/sensors.mediatek.V2.0.so',
-        'vendor/lib64/libcodec2_mtk_c2store.so',
-        'vendor/lib64/libcodec2_mtk_vdec.so',
-        'vendor/lib64/libcodec2_mtk_venc.so',
-        'vendor/lib64/libcodec2_vpp_qt_plugin.so',
-        'vendor/lib64/libcodec2_vpp_rs_plugin.so'
-    ): blob_fixup()
+    'vendor/lib64/hw/sensors.mediatek.V2.0.so': blob_fixup()
         .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
     'vendor/bin/hw/android.hardware.security.keymint-service.trustonic': blob_fixup()
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V1-ndk.so')
@@ -138,8 +131,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/mnld': blob_fixup()
         .binary_regex_replace(b'ro.logsystem.usertype', b'ro.vendor.lgsys.utype')
         .replace_needed('libmnl.so', 'libmnl-v33.so'),
-    ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
-        .replace_needed('libformatter.so', 'libformatter-v33.so'),
     'vendor/lib64/libmnl-v33.so': blob_fixup()
         .add_needed('libcutils.so'),
     'vendor/etc/init/init.volte_md_status.rc': blob_fixup()

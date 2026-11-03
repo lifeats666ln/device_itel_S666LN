@@ -1236,7 +1236,7 @@ vendor/lib64/libcodec2_mtk_venc.so|d41a59409ae550f1a9c37efa67ca7a21eff433de
 vendor/lib64/libcodec2_vpp_mi_plugin.so|74321eedd38154687400d2cd38c8e40b6870d60a
 vendor/lib64/libcodec2_vpp_qt_plugin.so|426dd8ead467f6616cecc1e9b989e489a9e9b242
 vendor/lib64/libcodec2_vpp_rs_plugin.so|01d219220607eaf50fbb10c4ffac7117e560411a
-vendor/lib64/libformatter.so:vendor/lib64/libformatter_mtk.so;FIX_SONAME|42d345ad56c2311d208932cf1292edc2166a3c81
+vendor/lib64/libformatter.so:vendor/lib64/libformatter_mtk.so;FIX_SONAME|42d345ad56c2311d208932cf1292edc2166a3c81|a1b61e3f71f384e6bcfd7a5903b9a7604c783191
 
 # Media (Common)
 vendor/lib/AVCSecureVdecCA_510.so;DISABLE_CHECKELF

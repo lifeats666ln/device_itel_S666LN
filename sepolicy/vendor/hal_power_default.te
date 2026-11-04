@@ -36,6 +36,7 @@ allow hal_power_default proc_game_state:lnk_file { ioctl read write getattr lock
 hal_client_domain(hal_power_default, hal_thermal)
 
 # Allow ADPF hint sessions to set uclamp on session threads
+typeattribute hal_power_default mlstrustedsubject;
 allow hal_power_default self:capability sys_nice;
 allow hal_power_default appdomain:process { getsched setsched };
 allow hal_power_default surfaceflinger:process setsched;

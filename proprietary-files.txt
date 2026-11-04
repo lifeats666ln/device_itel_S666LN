@@ -1354,11 +1354,6 @@ vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver@1.0.xm
 vendor/lib/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 vendor/lib64/vendor.transsion.hardware.trancam.trancamserver@1.0.so
 
-# Charger
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib64/libshowlogo.so
-
 # Connectivity
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader

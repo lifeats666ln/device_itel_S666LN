@@ -2,7 +2,7 @@
 git clone https://github.com/dns24/kernel_itel_s666ln device/itel/S666LN-kernel
 
 # Clone Device Vendor Tree
-git clone -b lineage-20.0 https://github.com/kimelazx/vendor_itel_S666LN vendor/itel/S666LN
+git clone -b lineage-20.0 https://github.com/lifeats666ln/vendor_itel_S666LN vendor/itel/S666LN
 
 # Clone Device Hardware
 git clone -b lineage-20.0 https://github.com/swaraloka-lab/hardware_millennium hardware/transsion

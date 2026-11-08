@@ -25,7 +25,6 @@ vendor.usbsph.ul.pcm.dump=0
 
 # Bluetooth
 bluetooth.device_id.vendor_id=0x0046
-bluetooth.profile.sap.server.enabled=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac
 persist.bluetooth.a2dp_offload.disabled=true
 ro.vendor.bt.platform=connac1x
@@ -165,7 +164,6 @@ ro.lmk.use_minfree_levels=false
 ro.lmk.use_psi=true
 
 # Media
-debug.mediatek.disp_decompress=1
 debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
 media.c2.hal.selection=aidl
@@ -343,7 +341,6 @@ ro.vendor.mtk_trustonic_tee_support=1
 vendor.usb.controller=musb-hdrc
 
 # Wifi
-persist.vendor.mtk_wfc_support=1
 ro.vendor.mtk_tb_wifi_3g_mode=0
 ro.vendor.wfd.dummy.enable=0
 ro.vendor.wfd.iframesize.level=0

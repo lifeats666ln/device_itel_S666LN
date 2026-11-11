@@ -8,6 +8,7 @@
         <!-- <kctl name="XXXX" value="XXXX" /> -->
         <!--headphone output-->
         <path name="headphone_output" value="turnon">
+            <kctl name="Headset Volume" value="0" />
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="HPL Mux" value="Audio Playback" />
             <kctl name="HPR Mux" value="Audio Playback" />
@@ -110,6 +111,7 @@
         </path>
         <!--external_speaker output-->
         <path name="ext_speaker_output" value="turnon">
+            <kctl name="Headset Volume" value="7" />
             <kctl name="Ext_Speaker_Amp Switch" value="1" />
         </path>
         <path name="ext_speaker_output" value="turnoff">

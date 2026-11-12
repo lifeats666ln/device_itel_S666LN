@@ -7,6 +7,7 @@
 #pragma once
 
 #include <aidl/android/hardware/vibrator/BnVibrator.h>
+#include <array>
 #include <map>
 
 namespace aidl {
@@ -14,20 +15,34 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
-const std::string kVibratorPropPrefix = "ro.vendor.vibrator.hal.";
-const std::string kVibratorPropDuration = ".duration";
-
 const std::string kVibratorState = "/sys/class/leds/vibrator_single/state";
 const std::string kVibratorDuration = "/sys/class/leds/vibrator_single/duration";
 const std::string kVibratorActivate = "/sys/class/leds/vibrator_single/activate";
+const std::string kVibratorSeq = "/sys/class/leds/vibrator_single/seq";
 
 #ifdef VIBRATOR_SUPPORTS_EFFECTS
-const std::string kVibratorStrength = "/sys/class/leds/vibrator_single/vmax";
-const std::string kVibratorStrengthMax = "/sys/class/leds/vibrator_single/vmax_max";
+const std::string kVibratorStrength = "/sys/class/leds/vibrator_single/gain";
+/* Unity gain is 0x80 */
+const int kVibratorStrengthMax = 0xB0;
 #endif
 
 static std::map<EffectStrength, float> vibStrengths = {
-        {EffectStrength::LIGHT, 0.25}, {EffectStrength::MEDIUM, 0.5}, {EffectStrength::STRONG, 1}};
+        {EffectStrength::LIGHT, 0.5}, {EffectStrength::MEDIUM, 0.75}, {EffectStrength::STRONG, 1}};
+
+/* Waveforms in aw8622x_haptic.bin */
+const int32_t kWaveNone = 0;
+const int32_t kWaveStrongClick = 1; /* 28 ms, full scale */
+const int32_t kWaveClick = 3;       /* 30 ms, 2/3 scale */
+const int32_t kWaveTick = 4;        /* 4 ms, 2/3 scale */
+const int32_t kWaveSoftTick = 5;    /* 4 ms, 1/4 scale */
+
+/* Shorter requests get stretched to the 30 ms click by the driver */
+const int32_t kVibratorMinDurationMs = 15;
+
+struct VibEffect {
+    std::array<int32_t, 2> waves; /* played back to back */
+    int32_t durationMs;
+};
 
 class Vibrator : public BnVibrator {
   public:
@@ -67,19 +82,21 @@ class Vibrator : public BnVibrator {
 
   private:
     static ndk::ScopedAStatus setNode(const std::string path, const int32_t value);
-    static int getIntProperty(const std::string& key, const int fallback);
-    std::map<Effect, int32_t> vibEffects = {
-            {Effect::CLICK, getIntProperty("click" + kVibratorPropDuration, 50)},
-            {Effect::TICK, getIntProperty("tick" + kVibratorPropDuration, 32)},
-            {Effect::TEXTURE_TICK, getIntProperty("texture_tick" + kVibratorPropDuration, 25)},
+    static ndk::ScopedAStatus setNode(const std::string path, const std::string value);
+    std::map<Effect, VibEffect> vibEffects = {
+            {Effect::TEXTURE_TICK, {{kWaveSoftTick, kWaveNone}, 5}},
+            {Effect::TICK, {{kWaveTick, kWaveNone}, 5}},
+            {Effect::POP, {{kWaveTick, kWaveSoftTick}, 9}},
+            {Effect::CLICK, {{kWaveClick, kWaveNone}, 30}},
+            {Effect::HEAVY_CLICK, {{kWaveStrongClick, kWaveNone}, 28}},
+            {Effect::THUD, {{kWaveStrongClick, kWaveClick}, 58}},
     };
 #ifdef VIBRATOR_SUPPORTS_EFFECTS
     static bool exists(const std::string path);
-    static int getNode(const std::string path, const int fallback);
     bool mVibratorStrengthSupported;
-    int mVibratorStrengthMax;
 #endif
-    ndk::ScopedAStatus activate(const int32_t timeoutMs);
+    ndk::ScopedAStatus play(const std::array<int32_t, 2>& waves);
+    ndk::ScopedAStatus activate(int32_t timeoutMs);
 };
 
 }  // namespace vibrator

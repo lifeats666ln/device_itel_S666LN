@@ -7,7 +7,6 @@
 #include "Vibrator.h"
 
 #include <android-base/logging.h>
-#include <android-base/properties.h>
 #include <fstream>
 
 namespace aidl {
@@ -16,6 +15,10 @@ namespace hardware {
 namespace vibrator {
 
 ndk::ScopedAStatus Vibrator::setNode(const std::string path, const int32_t value) {
+    return setNode(path, std::to_string(value));
+}
+
+ndk::ScopedAStatus Vibrator::setNode(const std::string path, const std::string value) {
     std::ofstream file(path);
 
     if (!file.is_open()) {
@@ -28,8 +31,37 @@ ndk::ScopedAStatus Vibrator::setNode(const std::string path, const int32_t value
     return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Vibrator::activate(const int32_t timeoutMs) {
+ndk::ScopedAStatus Vibrator::play(const std::array<int32_t, 2>& waves) {
     ndk::ScopedAStatus status;
+
+    status = setNode(kVibratorState, 1);
+    if (!status.isOk()) return status;
+
+    /* A duration below 30 ms selects one-shot RAM playback and clears the sequence */
+    status = setNode(kVibratorDuration, 1);
+    if (!status.isOk()) return status;
+
+    for (size_t i = 0; i < waves.size(); i++) {
+        status = setNode(kVibratorSeq, std::to_string(i) + " " + std::to_string(waves[i]));
+        if (!status.isOk()) return status;
+    }
+
+    return setNode(kVibratorActivate, 1);
+}
+
+ndk::ScopedAStatus Vibrator::activate(int32_t timeoutMs) {
+    ndk::ScopedAStatus status;
+
+    if (timeoutMs > 0 && timeoutMs < kVibratorMinDurationMs) return play({kWaveTick, kWaveNone});
+
+    /* The driver replaces these durations with its own presets */
+    switch (timeoutMs) {
+        case 65:
+        case 95:
+        case 200:
+            timeoutMs++;
+            break;
+    }
 
     /* timeoutMs under 1 = turn off vibrator */
     if (timeoutMs < 1) {
@@ -53,24 +85,7 @@ bool Vibrator::exists(const std::string path) {
     std::ofstream file(path);
     return file.is_open();
 }
-
-int Vibrator::getNode(const std::string path, const int fallback) {
-    std::ifstream file(path);
-    int value;
-
-    if (!file.is_open()) {
-        LOG(ERROR) << "failed to read from " << path.c_str();
-        return fallback;
-    }
-
-    file >> value;
-    return value;
-}
 #endif
-
-int Vibrator::getIntProperty(const std::string& key, const int fallback) {
-    return ::android::base::GetIntProperty(kVibratorPropPrefix + key, fallback);
-}
 
 }  // namespace vibrator
 }  // namespace hardware

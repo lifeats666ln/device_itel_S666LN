@@ -16,10 +16,7 @@ namespace vibrator {
 
 #ifdef VIBRATOR_SUPPORTS_EFFECTS
 Vibrator::Vibrator() {
-    if (exists(kVibratorStrength)) {
-        mVibratorStrengthSupported = true;
-        mVibratorStrengthMax = getNode(kVibratorStrengthMax, 9);
-    }
+    mVibratorStrengthSupported = exists(kVibratorStrength);
 }
 #endif
 
@@ -67,6 +64,7 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
                                      const std::shared_ptr<IVibratorCallback>& callback,
                                      int32_t* _aidl_return) {
     ndk::ScopedAStatus status;
+    VibEffect vibEffect;
     int32_t timeoutMs;
 
     if (vibEffects.find(effect) == vibEffects.end())
@@ -79,9 +77,10 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     setAmplitude(vibStrengths[strength]);
 #endif
 
-    timeoutMs = vibEffects[effect];
+    vibEffect = vibEffects[effect];
+    timeoutMs = vibEffect.durationMs;
 
-    status = activate(timeoutMs);
+    status = play(vibEffect.waves);
     if (!status.isOk()) return status;
 
     if (callback != nullptr) {
@@ -115,7 +114,17 @@ ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
 #ifdef VIBRATOR_SUPPORTS_EFFECTS
     LOG(VERBOSE) << "Setting amplitude: " << amplitude;
 
-    intensity = amplitude * mVibratorStrengthMax;
+    intensity = amplitude * kVibratorStrengthMax;
+
+    /* The driver replaces these values with its own presets */
+    switch (intensity) {
+        case 48:
+        case 73:
+        case 100:
+        case 114:
+            intensity++;
+            break;
+    }
 
     LOG(VERBOSE) << "Setting intensity: " << intensity;
 

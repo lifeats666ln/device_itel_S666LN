@@ -1405,11 +1405,11 @@ vendor/lib64/libnvram_sec.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
-# Power
-vendor/lib64/libperfctl_vendor.so
-vendor/lib64/libpower_timer.so
-vendor/lib64/vendor.mediatek.hardware.power@1.1.so
-vendor/lib64/vendor.mediatek.hardware.power@2.0.so
+# Power from spinel-user-16-BP2A.250605.031.A3-OS3.0.301.0.WPGMIXM-release-keys
+vendor/lib64/libperfctl_vendor.so|33967f0b3073f6c049475f229a9d33df905e775a
+vendor/lib64/libpower_timer.so|a4906b545f873523dfd5a52d4fc66f46aae29856
+vendor/lib64/vendor.mediatek.hardware.power@1.1.so|c58d697dbabdaa7491185303292ed5a712c78e43
+vendor/lib64/vendor.mediatek.hardware.power@2.0.so|988c92b9952f6634c6a11387093bc185b14d8c83
 
 # Radio
 vendor/bin/hw/mtkfusionrild

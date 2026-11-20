@@ -242,33 +242,33 @@
       "Name": "FGUclampMin",
       "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": [
-        "0",
+        "30",
         "10",
-        "30"
+        "0"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
       "Name": "TAUclampMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
-        "10",
+        "100",
         "30",
-        "100"
+        "10"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
       "Name": "CAMUClampBoost",
       "Path": "/dev/cpuctl/camera-daemon/cpu.uclamp.min",
       "Values": [
-        "70",
+        "100",
         "80",
-        "100"
+        "70"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {

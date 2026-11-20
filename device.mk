@@ -141,6 +141,10 @@ PRODUCT_PACKAGES += \
     libpiex \
     libpng.vendor
 
+# Connectivity
+PRODUCT_PACKAGES += \
+    wmt_loader
+
 # Control groups/Task profiles
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \

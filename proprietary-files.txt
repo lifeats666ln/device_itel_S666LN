@@ -921,7 +921,6 @@ vendor/lib64/libsmartcharging.so
 
 # Connectivity
 vendor/bin/wmt_launcher
-vendor/bin/wmt_loader
 vendor/etc/init/init.wmt_drv.rc
 
 # Display

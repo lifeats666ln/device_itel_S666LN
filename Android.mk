@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),S666LN)
+ifeq ($(TARGET_DEVICE),erebus)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

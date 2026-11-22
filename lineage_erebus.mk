@@ -12,15 +12,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 TARGET_DISABLE_EPPE := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from S666LN device
+# Inherit from erebus device
 $(call inherit-product, device/itel/S666LN/device.mk)
 
 BOARD_VENDOR := Itel
-PRODUCT_NAME := lineage_S666LN
-PRODUCT_DEVICE := S666LN
+PRODUCT_NAME := lineage_erebus
+PRODUCT_DEVICE := erebus
 PRODUCT_MANUFACTURER := ITEL
 PRODUCT_BRAND := Itel
-PRODUCT_MODEL := itel S666LN
+PRODUCT_MODEL := itel erebus
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 PRODUCT_SYSTEM_NAME := S666LN-OP

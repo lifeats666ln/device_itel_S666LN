@@ -1,4 +1,4 @@
-# Device tree for the itel RS4 (S666LN)
+# Device tree for erebus (itel RS4 / S666LN)
 
 ## Device specifications
 

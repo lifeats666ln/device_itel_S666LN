@@ -47,6 +47,10 @@
     {
       "Name": "mutt-pa1",
       "Type": "MODEM"
+    },
+    {
+      "Name": "charger-cooler",
+      "Type": "BATTERY"
     }
   ]
 }

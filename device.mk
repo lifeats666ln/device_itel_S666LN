@@ -490,6 +490,7 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal/thermal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal/thermal.conf \
     $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB

@@ -1579,7 +1579,6 @@ vendor/etc/thermal/disable_skin_control.conf
 vendor/etc/thermal/disable_thermal.conf
 vendor/etc/thermal/disable_thermal_temp.conf
 vendor/etc/thermal/disable_throttling.conf
-vendor/etc/thermal/thermal.conf
 vendor/etc/thermal/thermal_mtbf.conf
 vendor/etc/thermal/thermal_policy_00.conf
 vendor/etc/thermal/thermal_policy_02.conf
